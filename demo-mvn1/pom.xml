@@ -20,6 +20,19 @@
 
   <dependencies>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.6.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>2.6.2</version>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -35,6 +48,7 @@
   </dependencies>
 
   <build>
+    <finalName>demo-maven-one</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -70,8 +84,9 @@
         <version>3.2.4</version>
         <configuration>
           <transformers>
-            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-              <mainClass>com.gbsplus.demo.Main</mainClass>
+            <transformer 
+              implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+              <mainClass>com.gbsplus.App</mainClass>
             </transformer>
           </transformers>
         </configuration>
