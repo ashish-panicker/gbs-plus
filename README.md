@@ -123,6 +123,7 @@ Create a java program with the following features.
 - The file must be created inside the `orders` folder.
 - The file name must be int the following format `order-#order_id`.
 - Orders must be printed in a tabular format
+
 ```
 --------------------------------------------------------------------------
  Order Id:  1                                   Customer:    Ashish         
@@ -138,6 +139,7 @@ Create a java program with the following features.
  Net Total: 199.95 
 
 ```
+
 - Option 2 will generate an output in the following format.
   
     ```
