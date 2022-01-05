@@ -81,7 +81,7 @@ Setup **VS Code** for Java development
 
 - [VSCode Java Support](https://code.visualstudio.com/docs/languages/java)
 
-### Assignment  - OrderProcessing
+### ### Assignment  - OrderProcessing
 
 Create a java program with the following features.
 
@@ -124,21 +124,21 @@ Create a java program with the following features.
 - The file name must be int the following format `order-#order_id`.
 - Orders must be printed in a tabular format
 
-```
---------------------------------------------------------------------------
- Order Id:  1                                   Customer:    Ashish         
- 
- Item Name             Qty     Unit Price     Total Price
- --------------------------------------------------------------------------
-  Book - Animal Farm    1       72.99           72.99 
-         Soap - Dove    2       44.99           89.98 
- Noodles - Spaghetti    3       23.99           71.97 
-  Softdrinks - Pepsi    3       33.99           101.97 
-        Flour - Atta    1       23.99           23.99 
----------------------------------------------------------------------------
- Net Total: 199.95 
+    ```
+    --------------------------------------------------------------------------
+     Order Id:  1                                   Customer:    Ashish         
 
-```
+     Item Name             Qty     Unit Price     Total Price
+     --------------------------------------------------------------------------
+      Book - Animal Farm    1       72.99           72.99 
+             Soap - Dove    2       44.99           89.98 
+     Noodles - Spaghetti    3       23.99           71.97 
+      Softdrinks - Pepsi    3       33.99           101.97 
+            Flour - Atta    1       23.99           23.99 
+    ---------------------------------------------------------------------------
+     Net Total: 199.95 
+
+    ```
 
 - Option 2 will generate an output in the following format.
   
