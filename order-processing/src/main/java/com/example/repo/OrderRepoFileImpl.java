@@ -3,6 +3,7 @@ package com.example.repo;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
@@ -17,20 +18,18 @@ public class OrderRepoFileImpl implements OrderRepo {
     }
 
     @Override
-    public Order getOrderById(int orderId) {
+    public Order getOrderById(int orderId) throws IOException, ClassNotFoundException {
         File dir = new File("orders");
         File file = new File(dir, "order-" + orderId);
         Order order = null;
         try (ObjectInputStream oin = new ObjectInputStream(new FileInputStream(file))) {
             order = (Order) oin.readObject();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } 
         return order;
     }
 
     @Override
-    public void addOrder(Order order) {
+    public void addOrder(Order order) throws IOException{
         // serialize data to order file
         File dir = new File("orders");
         System.err.println("addOrder()");
@@ -45,9 +44,7 @@ public class OrderRepoFileImpl implements OrderRepo {
             outStream.writeObject(order);
             outStream.flush();
             System.out.println("Order saved to file");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } 
 
     }
 

@@ -1,5 +1,6 @@
 package com.example;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import com.example.model.Item;
@@ -14,7 +15,7 @@ import com.example.service.OrderServiceImpl;
  *
  */
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, IOException {
         System.out.println("Hello World!");
 
         OrderService orderService = new OrderServiceImpl(new OrderRepoFileImpl());

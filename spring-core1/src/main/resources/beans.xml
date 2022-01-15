@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="circle" class="com.example.shapes.Circle" />
+    <bean id="square" class="com.example.shapes.Square" init-method="init" destroy-method="destroy" />
+    <bean id="colour" class="com.example.shapes.Colour">
+        <property name="foreGround" value="red" />
+        <property name="backGround" value="green" />
+    </bean>
+    <bean id="circlePainter" class="com.example.shapes.Painter">
+        <property name="shape" ref="circle"/>
+        <property name="colour" ref="colour"/>
+    </bean>
+    <bean id="squarePainter" class="com.example.shapes.Painter">
+        <property name="shape" ref="square"/>
+        <property name="colour" ref="colour"/>
+    </bean>
+
+
+</beans>

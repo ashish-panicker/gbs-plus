@@ -1,5 +1,6 @@
 package com.example.service;
 
+import java.io.IOException;
 import java.util.List;
 import com.example.model.Order;
 import com.example.repo.OrderRepo;
@@ -18,12 +19,12 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public Order getOrderById(int orderId) {        
+    public Order getOrderById(int orderId) throws ClassNotFoundException, IOException {        
         return orderRepo.getOrderById(orderId);
     }
 
     @Override
-    public void addOrder(Order order) {
+    public void addOrder(Order order) throws IOException {
         orderRepo.addOrder(order);
     }
 
