@@ -87,6 +87,8 @@ Servlet API
     
     // Create a servlet class
 
+    // Annote the servlet class with the folowing annotation
+    @WebServlet(name = "MyServlet", urlPatterns = {"/myservlet"})
     public class MyServlet extends HttpServlet {
             
             @Override
@@ -101,8 +103,6 @@ Servlet API
         
     }
 
-    // Annote the servlet class with the folowing annotation
-    @WebServlet(name = "MyServlet", urlPatterns = {"/myservlet"})
 ```
 
 ```xml
