@@ -80,3 +80,41 @@ Servlet API
   </welcome-file-list>
 </web-app>
 ```
+
+## Creating a servlet
+
+```java
+    
+    // Create a servlet class
+
+    public class MyServlet extends HttpServlet {
+            
+            @Override
+            public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+                
+            }
+
+            @Override
+            public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+                
+            }
+        
+    }
+
+    // Annote the servlet class with the folowing annotation
+    @WebServlet(name = "MyServlet", urlPatterns = {"/myservlet"})
+```
+
+```xml
+     <!-- define a servlet mapping in web.xml -->
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>com.gbs.plus.MyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/myservlet</url-pattern>
+    </servlet-mapping>
+
+```
