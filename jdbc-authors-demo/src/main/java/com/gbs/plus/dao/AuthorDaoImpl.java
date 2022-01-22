@@ -47,6 +47,4 @@ public class AuthorDaoImpl implements AuthorDao {
         return null;
     }
 
-
-
 }
