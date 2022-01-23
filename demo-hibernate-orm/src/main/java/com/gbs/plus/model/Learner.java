@@ -7,9 +7,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.gbs.plus.model.embeddable.Address;
+import com.gbs.plus.model.embeddable.Name;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "learners")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Learner {
 
     @Id
@@ -17,80 +29,18 @@ public class Learner {
     @Column(name = "learner_id")
     private Integer learnerId;
 
-    private String firstName;
-
-    private String lastName;
+    private Name name;
 
     private String email;
 
     private LocalDate hireDate;
 
-    public Learner() {}
+    private Address address;
 
-    public Learner(String firstName, String lastName, String email, LocalDate hireDate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Learner(Name name, Address address, String email, LocalDate hireDate) {
+        this.name = name;
+        this.address = address;
         this.email = email;
         this.hireDate = hireDate;
     }
-
-
-    public Learner(Integer learnerId, String firstName, String lastName, String email,
-            LocalDate hireDate) {
-        this.learnerId = learnerId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.hireDate = hireDate;
-    }
-
-    public Integer getLearnerId() {
-        return learnerId;
-    }
-
-    public void setLearnerId(Integer learnerId) {
-        this.learnerId = learnerId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public LocalDate getHireDate() {
-        return hireDate;
-    }
-
-    public void setHireDate(LocalDate hireDate) {
-        this.hireDate = hireDate;
-    }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "Learner [email=%s, firstName=%s, hireDate=%s, lastName=%s, learnerId=%s]", email,
-                firstName, hireDate, lastName, learnerId);
-    }
-
-
-
 }

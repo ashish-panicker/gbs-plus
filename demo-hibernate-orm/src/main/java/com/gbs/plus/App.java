@@ -3,6 +3,8 @@ package com.gbs.plus;
 import java.time.LocalDate;
 import com.gbs.plus.model.Learner;
 import com.gbs.plus.model.Trainer;
+import com.gbs.plus.model.embeddable.Address;
+import com.gbs.plus.model.embeddable.Name;
 import com.gbs.plus.repo.LearnerRepo;
 import com.gbs.plus.repo.LearnerRepoImpl;
 import com.gbs.plus.repo.TrainerRepo;
@@ -18,17 +20,24 @@ import org.hibernate.SessionFactory;
 public class App {
     public static void main(String[] args) {
 
-        Learner johnSmith = new Learner("John", "Smith", "j.smith", LocalDate.now());
-        Learner janeDoe = new Learner("Jane", "Doe", "j.doe", LocalDate.of(2021, 11, 15));
-        Trainer trainer = new Trainer("Ashish", "Panicker", "a.panicker", "FSD");
+        Name name1 = new Name("John", "Smith");
+        Name name2 = new Name("Jane", "Doe");
+
+        Address address1 = new Address("Dawn", "123 Main St", "Anytown", "CA", "90210");
+        Address address2 = new Address("Joy", "125 Main St", "Anytown", "CA", "90210");
+
+        // Learner johnSmith = new Learner(name1, address1, "j.smith", LocalDate.now());
+        Trainer trainer = new Trainer(name2, address2, "a.panicker", "FSD");
 
         TrainerRepo trainerRepo = new TrainerRepoImpl();
         trainerRepo.save(trainer);
 
-        LearnerRepo learnerRepo = new LearnerRepoImpl();
-        learnerRepo.save(johnSmith);
-        learnerRepo.save(janeDoe);
+        // System.out.println("Trainer: " + trainerRepo.findById(3).get());
 
-        HibernateUtil.shutdown();
+        // trainerRepo.deleteById(3);
+        // LearnerRepo learnerRepo = new LearnerRepoImpl();
+        // learnerRepo.save(johnSmith);
+
+        // HibernateUtil.shutdown();
     }
 }
