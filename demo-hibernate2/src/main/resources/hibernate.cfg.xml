@@ -12,6 +12,8 @@
         <property name="format_sql">true</property>
 
         <mapping class="com.example.model.Employee"/>
+        <mapping class="com.example.model.Magazine"/>
+        <mapping class="com.example.model.Book"/>
         <!-- <mapping class="com.example.Department\sql
             "/> -->
     </session-factory>
