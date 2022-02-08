@@ -16,6 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PersonViewModel {
 
+    private Integer id;
+
     @NotBlank(message = "First Name is required")
     @Size(min = 2, max = 30, message = "First Name must be between 2 and 30 characters")
     @Pattern(regexp = "^[a-zA-Z]+$", message = "First Name must contain only letters")

@@ -12,13 +12,116 @@
       crossorigin="anonymous"
     />
 
-    <title>Index</title>
+    <title>Pesonal Management - Spring MVC Project</title>
   </head>
   <body>
-    <h1>Thymeleaf page</h1>
-    <h2 th:text="${'Hello ' + name + ' you are a ' + role}"></h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">HR - Sys</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" th:href="@{/}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{/persons}">New</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- nav ends -->
 
-    <!-- link to person controller -->
-    <a th:href="@{/persons}">Person</a>
+    <div class="container mt-3">
+      <div class="col-12" th:if="${count eq 0}">
+        <div class="alert alert-warning" role="alert">
+          <h4 class="alert-heading">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+              viewBox="0 0 16 16"
+              role="img"
+              aria-label="Warning:"
+            >
+              <path
+                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+            HR-SYS: No Records
+          </h4>
+          <p>
+            There are no personnal records in the database. Please add a new
+            record first.
+          </p>
+          <hr />
+          <p>
+            <a class="btn btn-warning" th:href="@{/persons}"
+              >Create a new personnal record.</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- no records container ends -->
+
+    <div class="container mt-3">
+      <div class="col-12" th:if="${count ne 0}">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Address</th>
+              <th scope="col">Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="person : ${people}">
+              <th scope="row" th:text="${person.id}"></th>
+              <td th:text="${person.firstName}"></td>
+              <td th:text="${person.lastName}"></td>
+              <td th:text="${person.email}"></td>
+              <td th:text="${person.phoneNumber}"></td>
+              <td th:text="${person.address}"></td>
+              <td>
+                <a th:href="@{'/persons/view/v/' + ${person.id}}">View</a>
+                <a th:href="@{'/persons/view/u/' + ${person.id}}">Update</a>
+                <a th:href="@{'/persons/view/d/' + ${person.id}}">Delete</a>
+              </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- container ends -->
   </body>
 </html>

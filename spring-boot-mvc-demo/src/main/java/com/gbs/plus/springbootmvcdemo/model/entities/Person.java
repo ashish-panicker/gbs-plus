@@ -1,8 +1,16 @@
 package com.gbs.plus.springbootmvcdemo.model.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "personnel_data")
 public class Person {
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private String firstName;
     private String lastName;
