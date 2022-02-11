@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>Users Index Page</h1>
+
+    <fieldset style="margin: 0 auto; width: 80%;">
+        <legend>Provide your login information</legend>
+
+        <form th:action="@{/login}" th:object="${loginUser}" method="post">
+
+            <div>
+                <label for="userName">Username</label>
+                <input type="text" name="userName" id="userName" th:field="*{userName}">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" th:field="*{password}">
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </fieldset>
+</body>
+</html>
