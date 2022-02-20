@@ -1,0 +1,24 @@
+spring:
+    batch:
+        jdbc:
+            initialize-schema: ALWAYS
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/movies
+        username: root
+        password: password
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+    file:
+        name: movie-api.log
+        level: DEBUG
+    level:
+        root: INFO
+
+    

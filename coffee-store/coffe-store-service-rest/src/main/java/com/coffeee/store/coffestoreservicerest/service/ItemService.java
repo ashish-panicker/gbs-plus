@@ -13,5 +13,9 @@ public interface ItemService {
 
     List<Item> findAll();
 
+    void delete(Integer id);
+
+    Item update(Item item);
+
     
 }

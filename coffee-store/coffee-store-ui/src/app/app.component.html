@@ -1,0 +1,22 @@
+<div class="container">
+  <p class="display-1 text-center mt-4">My Coffee Shop</p>
+<div class="row">
+
+  <div *ngFor="let item of items" class="col-3">
+    <div class="card" >
+      <img src={{item.image}} class="card-img-top" alt="..." >
+      <div class="card-body">
+        <h4 class="text-center"> {{item.name}} </h4>
+        <p class="card-text"> {{item.description}} </p>
+        <p class="small"> 
+          <span class="fw-bold">Cost:</span> Rs {{item.price}} 
+          <span class="float-end" [ngClass]="item.type == 'veg' ? 'text-success' : 'text-danger'">{{item.type}}</span>
+        </p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary">Add to Menu</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

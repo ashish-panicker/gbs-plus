@@ -1,0 +1,20 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/movies
+        username: root
+        password: password
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+server:
+    port: 9000
+logging:
+    file:
+        name: movie-artists-api.log
+    level:
+        root: INFO
+        '[org.springframework.web]': WARN
+        '[com.gbs.plus]': DEBUG
+    

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieRatingServiceApplication<movie-rating-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.gbs.plus.movieratingservice.MovieRatingServiceApplication",
+            "projectName": "movie-rating-service",
+            "args": ""
+        }
+    ]
+}

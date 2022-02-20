@@ -3,7 +3,9 @@ package com.coffeee.store.coffestoreservicerest.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +19,8 @@ import lombok.Setter;
 public class Item {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "item_seq_gen")
+    @SequenceGenerator(name = "item_seq_gen", initialValue = 5, sequenceName = "items_sequence")
     private Integer id;
     
     @Column(name = "item_name")
